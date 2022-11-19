@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+      
+<head>
+    <title>Extern Labs
+    </title>
+          
+    <style>
+  
+  :root {
+
+    --first-color: #272a3a;
+    --first-color-light: #8a8eaa;
+    --first-color-lighten: #f8f8fc;
+}
+
+
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--body-font);
+    background-color: var(--first-color-lighten);
+}
+
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/*===== DRAG and DROP =====*/
+
+.drop,
+.drop_container {
+    display: grid;
+}
+
+.drop {
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.drop_container {
+    row-gap: 1rem;
+    padding: 2rem;
+    box-shadow: 4px 4px 16px #e1e1e1;
+}
+
+
+.sortable-chosen {
+    box-shadow: 8px 8px 32px #e1e1e1;
+}
+
+
+.sortable-drag {
+    opacity: 0;
+}
+
+    </style>
+          
+</head>
+      
+<body>
+    <div class="drop">
+        <div class="drop_container" id="drop-items">
+           
+                    <img src="https://media.istockphoto.com/id/1360624697/photo/smiling-friends-using-a-phone.jpg?b=1&s=170667a&w=0&k=20&c=BMBjo-skC3bwPYc1Y-L83zgwO28pdCOo0MpU0mEOAu0=" alt="img1">
+
+                
+
+                    <img src="https://media.istockphoto.com/id/1411238971/photo/portrait-of-a-mid-adult-woman-dancing-and-celebrating-the-day-of-the-dead.jpg?b=1&s=170667a&w=0&k=20&c=aTrvzrx-Ub5FJkilDPpjvHuSxiSQEr4QNlfC3medQDY=" alt="img1">
+
+                  
+                    <img src="https://media.istockphoto.com/id/1310710228/photo/american-football-ball-and-helmet-on-the-grass-of-football-arena-or-stadium.jpg?b=1&s=170667a&w=0&k=20&c=-Q2dKXNxJsnLofKpctOehJvel-lgC3gmkOWb0vJJ2bg=" alt="img1">
+
+                    
+                    <img src="https://media.istockphoto.com/id/1352918375/photo/saguaro-sunset-silhouette.jpg?b=1&s=170667a&w=0&k=20&c=vGVjEiI6i53vvGDvq1EnMjKSGjiDHKtvX0vOta8Anmw=" alt="img1">
+
+                  
+        </div>
+    </div></body>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script>
+        const dropItems = document.getElementById('drop-items')
+  
+  new Sortable(dropItems, {
+      animation: 350,
+      chosenClass: "sortable-chosen",
+      dragClass: "sortable-drag"
+  });
+      </script>
+  
+</html>
